@@ -2,10 +2,10 @@ local set = vim.keymap.set
 
 -- Window Keybinds
 set("n", "<C-w>z", "<cmd>:WindowsMaximize<CR>")
-set("n", "<C-h>", "<C-w>h")
-set("n", "<C-j>", "<C-w>j")
-set("n", "<C-k>", "<C-w>k")
-set("n", "<C-l>", "<C-w>l")
+set({'n', 't'}, '<C-h>', '<CMD>lua require("tmux").move_left()<CR>')
+set({'n', 't'}, '<C-l>', '<CMD>lua require("tmux").move_right()<CR>')
+set({'n', 't'}, '<C-k>', '<CMD>lua require("tmux").move_top()<CR>')
+set({'n', 't'}, '<C-j>', '<CMD>lua require("tmux").move_bottom()<CR>')
 
 -- System Clipboard
 set("n", "<leader>y", '"+y')

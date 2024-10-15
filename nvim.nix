@@ -60,6 +60,7 @@ in
       noice-nvim
       lualine-nvim
       toggleterm-nvim
+      tmux-nvim
     ];
   };
 }

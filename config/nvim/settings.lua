@@ -261,6 +261,7 @@ vim.diagnostic.config({
 --
 
 require("toggleterm").setup()
+require("tmux").setup()
  
 local Terminal = require("toggleterm.terminal").Terminal
 local hpm = Terminal:new({
