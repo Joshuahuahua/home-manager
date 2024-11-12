@@ -98,12 +98,13 @@ in
       };
       shellAliases = {
         lg = "lazygit";
+        t = "tmux";
       };
       initExtra = builtins.readFile ./config/zshrc;
     };
     eza = {
       enable = true;
-      icons = "auto";
+      icons = true;
       git = true;
     };
     git = {
