@@ -61,6 +61,8 @@ in
       lualine-nvim
       toggleterm-nvim
       tmux-nvim
+      comment-nvim
+      nvim-ts-context-commentstring
     ];
   };
 }

@@ -99,6 +99,10 @@ in
       shellAliases = {
         lg = "lazygit";
         t = "tmux";
+        p = "pwsh.exe";
+        pwsh = "pwsh.exe";
+        python = "python3";
+        py = "python3";
       };
       initExtra = builtins.readFile ./config/zshrc;
     };
