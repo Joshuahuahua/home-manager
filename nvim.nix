@@ -18,6 +18,15 @@ let
       hash = "sha256-gkqt4rsH9VOy4JOWmcc65z70qejkCCaB7iKXRwIKeAY=";
     };
   };
+  csvview-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "csvview-nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "hat0uma";
+      repo = "csvview.nvim";
+      rev = "d9bd2efedb028bdb818fd18d1f3db9e0a1d01867";
+      hash = "sha256-eI/Ck1ZxN3asp8VmoTzYWNtJX/PeLN/kJ9kVq7hNXEU=";
+    };
+  };
 in
 {
   programs.neovim = {
@@ -32,6 +41,7 @@ in
     plugins = with pkgs.vimPlugins; [
       supermaven-nvim
       sonarlint-nvim
+      csvview-nvim
       nvim-treesitter.withAllGrammars
       nvim-lspconfig
       mason-nvim

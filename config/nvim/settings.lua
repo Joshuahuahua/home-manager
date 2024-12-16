@@ -1,9 +1,10 @@
 local o = vim.opt
 local g = vim.g
+local a = vim.api
 
 -- Leader Key
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+g.mapleader = " "
+g.maplocalleader = " "
 
 -- Line Numbers
 o.number = true
@@ -279,6 +280,10 @@ end, { noremap = true, silent = true })
 vim.keymap.set("t", "<esc>", [[<C-\><C-n><C-W>w]])
 
 
+require('csvview').setup({
+  -- Your configuration options here
+})
+
 -- Sonarlint
 -- require('sonarlint').setup({
 --   server = {
@@ -297,3 +302,18 @@ vim.keymap.set("t", "<esc>", [[<C-\><C-n><C-W>w]])
 --     'typescriptreact',
 --   }
 -- })
+
+
+-- Create an augroup to manage related autocommands
+
+a.nvim_create_augroup('CsvViewGroup', { clear = true })
+
+-- Define an autocommand that runs CsvViewEnable when a CSV file is opened
+
+a.nvim_create_autocmd('FileType', {
+  group = 'CsvViewGroup',
+  pattern = 'csv',
+  callback = function()
+    vim.cmd('CsvViewEnable')
+  end,
+})
