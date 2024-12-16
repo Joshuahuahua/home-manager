@@ -1,6 +1,7 @@
 local o = vim.opt
 local g = vim.g
 local a = vim.api
+local k = vim.keymap
 
 -- Leader Key
 g.mapleader = " "
@@ -262,22 +263,20 @@ vim.diagnostic.config({
 
 require("toggleterm").setup()
 require("tmux").setup()
- 
+
 local Terminal = require("toggleterm.terminal").Terminal
 local hpm = Terminal:new({
 	cmd = "pnpm hpm",
 	dir = "~/development/huddler/workspace1",
 	hidden = true,
- 
 	direction = "float",
- 
 	display_name = "Huddler Package Manager",
 })
- 
-vim.keymap.set("n", "<leader>h", function()
+
+k.set("n", "<leader>h", function()
 	hpm:toggle()
 end, { noremap = true, silent = true })
-vim.keymap.set("t", "<esc>", [[<C-\><C-n><C-W>w]])
+k.set("t", "<esc>", [[<C-\><C-n><C-W>w]])
 
 
 require('csvview').setup({
