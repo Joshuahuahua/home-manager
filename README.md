@@ -20,6 +20,9 @@ nix-shell '<home-manager>' -A install
 ## Alacritty Configuration
 The [Alacritty](https://github.com/alacritty/alacritty) terminal emulator is used for my terminal. [(*download*)](https://github.com/alacritty/alacritty/releases/download/v0.13.2/Alacritty-v0.13.2-installer.msi)
 
+### Windows
+Copy the alacritty *folder* into the `C:/Users/[user]/AppData/Roaming/` directory.
+
 ```toml
 [shell]
 program = "wsl.exe ~ -d Ubuntu-24.04"
