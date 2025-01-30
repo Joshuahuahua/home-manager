@@ -27,6 +27,15 @@ let
       hash = "sha256-eI/Ck1ZxN3asp8VmoTzYWNtJX/PeLN/kJ9kVq7hNXEU=";
     };
   };
+  semshi = pkgs.vimUtils.buildVimPlugin {
+    name = "semshi";
+    src = pkgs.fetchFromGitHub {
+      owner = "numirias";
+      repo = "semshi";
+      rev = "252f07fd5f0ae9eb19d02bae979fd7c9152c1ccf";
+      hash = "sha256-A/voYRhrihnA8GF03CCuEXhsqYTLwuSg2whM6OHMNmQ=";
+    };
+  };
 in
 {
   programs.neovim = {
@@ -42,6 +51,7 @@ in
       supermaven-nvim
       sonarlint-nvim
       csvview-nvim
+      semshi
       nvim-treesitter.withAllGrammars
       nvim-lspconfig
       mason-nvim
