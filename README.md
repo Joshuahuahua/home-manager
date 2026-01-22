@@ -40,9 +40,9 @@ echo -e "if test -t 1; then\n  exec zsh\nfi\n$(cat ~/.bashrc)" > ~/.bashrc
 
 Configure Git credentials
 ```bash
-git config credential.helper store
-git config user.email "joshua.j.hollander@gmail.com"
-git config user.name "Joshua Hollander"
+git config --global credential.helper store
+git config --global user.email "joshua.j.hollander@gmail.com"
+git config --global user.name "Joshua Hollander"
 ```
 
 Download [Liga Nerd Font](https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized/archive/refs/heads/main.zip)
